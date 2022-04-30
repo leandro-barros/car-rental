@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import '~ngx-toastr/toastr';
+/* body{
+  font-family: 'Montserrat', sans-serif;
+} */
+
+* {
+  font-family: 'Poppins', sans-serif;
+  /* font-size: 13px; */
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  /* height: 100vh; */
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+*:focus {
+  outline: 0 !important
+}
+
+/* body {
+  background-color: #f1f4f9 !important;
+} */
+
+
+/* Botões ------------------------------------------------- */
+.mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+  color: #065fd4;
+  font-weight: 550;
+  border-color: #065fd4;
+  /* border-color: #1e88e5; */
+}
+
+.mat-raised-button.mat-primary {
+  /* font-weight: 550; */
+  background-color: #065fd4;
+}
+
+/* Muda cor checkbox --------------------------------------------- */
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color:rgb(66, 134, 244) ;
+}
+
+/* Muda cor Radio Buttun--------------------------------------------------------------- */
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color:rgb(66, 134, 244);
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  color:rgb(66, 134, 244);
+  background-color:rgb(66, 134, 244) ;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color:rgb(255, 37, 37,.26)
+}
+
+/* Título do modal -------------------------------------------------------- */
+.mat-dialog-title {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Título da pesquisa ---------------------------------------------------------------- */
+.tituloPesquisa {
+  font-weight: bold;
+}
+
+.mat-card-title {
+  font-size: 20px;
+}
+
+.tooltip-estoque {
+  background: #b71c1c;
+  font-size: 12px;
+}
+
+.tooltip-tamanho-fonte {
+  font-size: 12px;
+}
+
+/* Permite deixar as tabelas reponsivas ------------------------------------------------------- */
+@media screen and (max-width: 910px) {
+  #toggle-1 {
+    display:none;
+  }
+
+  .mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+  mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
+    padding-left: 0 !important;
+  }
+
+  mat-cell:last-of-type, mat-footer-cell:last-of-type, mat-header-cell:last-of-type {
+    padding-right: 0 !important;
+  }
+
+  .mat-table .mat-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+  }
+
+  .mat-table .mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height:30px;
+    margin-bottom: 4%;
+    margin-right: 10px;
+  }
+
+  .mat-table .mat-cell:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: .85em;
+    padding-left: 10px;
+  }
+
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+}
+
+.codigo {
+  flex: 0 0 9%;
+}
+
+.icone-edicao {
+  color: #28a745;
+}
+
+.icone-visualizacao {
+  color: #13b4e4;
+}
+
+.icone-exclusao {
+  color: #dc3545;
+}
+
+.breadcrumb > li + li:before {
+  padding: 0 5px !important;
+  content: ">\00a0" !important;
+}
+
+nav > .breadcrumb {
+  background-color: #f0f2f5;
+  padding: 0rem;
+  font-size: 14px;
+}

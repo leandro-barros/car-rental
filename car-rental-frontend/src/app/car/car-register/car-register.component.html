@@ -1,0 +1,82 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/inicio">Início</a></li>
+    <li class="breadcrumb-item active"><a routerLink="/carros">Carros</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{editando ? 'Edição' : 'Novo'}}</li>
+  </ol>
+</nav>
+
+<mat-card>
+  <mat-card-content>
+    <div class="container">
+      <mat-card-title>{{ editando ? 'Edição de' : 'Novo' }} Carro</mat-card-title>
+      <mat-divider></mat-divider>
+
+      <form (ngSubmit)="salvar()" [formGroup]="formGroupCarro">
+        <div class="row mt-3">
+
+          <!-- <div class="col-md-12">
+            <label id="tipo">Tipo Pessoa</label>
+          </div>
+          <div class="col-md-12">
+            <mat-radio-group color="blue" aria-label="tipo" formControlName="tipo" (change)="changeCurrentMask()">
+              <mat-radio-button value="FISICA">Física</mat-radio-button>
+              <mat-radio-button value="JURIDICA">Jurídica</mat-radio-button>
+            </mat-radio-group>
+          </div> -->
+
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="mat-form-field-fluid">
+              <mat-label>Nome*</mat-label>
+              <input matInput formControlName="name" placeholder="Digite o nome do carro">
+              <mat-error *ngIf="formGroupCarro.controls.name.hasError('required')">Informe o nome</mat-error>
+              <mat-error *ngIf="formGroupCarro.controls.name.hasError('minlength')">Nome deve ter mais de 3 caracteres</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="mat-form-field-fluid">
+              <mat-label>Modelo*</mat-label>
+              <input matInput formControlName="model" placeholder="Digite o modelo do carro">
+              <mat-error>Informe o modelo</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="mat-form-field-fluid">
+              <mat-label>Marca*</mat-label>
+              <input matInput formControlName="mark" placeholder="Digite a marca do carro">
+              <mat-error>Informe a marca</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="mat-form-field-fluid">
+              <mat-label>Cor*</mat-label>
+              <input matInput formControlName="color" placeholder="Digite a cor do carro">
+              <mat-error>Informe a cor</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="mat-form-field-fluid">
+              <mat-label>Qtd. de Portas*</mat-label>
+              <input matInput type="number" formControlName="numberPort" placeholder="Digite a qtd de portas do carro">
+              <mat-error>Informe a qtd de portas</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <mat-divider></mat-divider>
+          </div>
+
+          <div class="col-md-12 pt-2" align="end">
+            <button mat-stroked-button routerLink="/carros" style="margin-right: 10px" type="button">Voltar</button>
+            <button mat-raised-button color="primary" type="submit">Salvar</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
