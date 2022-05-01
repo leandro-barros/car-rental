@@ -10,6 +10,7 @@ const routes: Routes = [
     component: TemplateComponent,
     children: [
       { path: 'carros', loadChildren: './car/car.module#CarModule' },
+      { path: 'aluguel', loadChildren: './rent/rent.module#RentModule' },
 
       { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     ]

@@ -58,10 +58,8 @@ export class CarRegisterComponent implements OnInit {
     
     if (this.formGroupCarro.valid) {
       if (this.editando) {
-        alert('1');
         this.atualizarCarro();
       } else {
-        alert('2');
         this.salvarCarro();
       }
     }

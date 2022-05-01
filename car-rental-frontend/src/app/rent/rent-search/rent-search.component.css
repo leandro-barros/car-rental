@@ -1,0 +1,18 @@
+example-card {
+    max-width: 10px !important;
+}
+
+.rent {
+    color: #28a745;
+    font-weight: 550;
+    border-color: #28a745;
+}
+
+mat-list-item p span {
+    font-weight: 700;
+}
+
+.icon {
+    font-size: 50px;
+    text-align: center;
+}

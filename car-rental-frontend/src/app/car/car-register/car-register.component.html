@@ -39,7 +39,7 @@
             </mat-form-field>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-3">
             <mat-form-field appearance="outline" class="mat-form-field-fluid">
               <mat-label>Qtd. de Portas*</mat-label>
               <input matInput type="number" formControlName="numberPort" placeholder="Digite a qtd de portas do carro">
@@ -47,22 +47,22 @@
             </mat-form-field>
           </div>
 
-          <div class="col-md-6">
-            <label id="tipo">Possui Ar</label>
-          </div>
-          <div class="col-md-6">
-            <mat-radio-group color="blue" aria-label="tipo" formControlName="airconditioning">
-              <mat-radio-button value="true">Sim</mat-radio-button>
-              <mat-radio-button value="false">Não</mat-radio-button>
-            </mat-radio-group>
-          </div>
-
-          <div class="col-md-6">
+          <div class="col-md-3">
             <mat-form-field appearance="outline" class="mat-form-field-fluid">
               <mat-label>Placa*</mat-label>
               <input matInput formControlName="plaque" placeholder="Digite a placa do carro">
               <mat-error *ngIf="formGroupCarro.controls.plaque.hasError('required')">Informe a placa</mat-error>
             </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <label id="tipo">Possui Ar</label>
+          </div>
+          <div class="col-md-12">
+            <mat-radio-group color="blue" aria-label="tipo" formControlName="airconditioning">
+              <mat-radio-button value="true">Sim</mat-radio-button>
+              <mat-radio-button value="false">Não</mat-radio-button>
+            </mat-radio-group>
           </div>
 
           <div class="col-md-12">

@@ -44,8 +44,7 @@ export class CarSearchComponent implements OnInit {
 
   configurarForm() {
     this.formGroupCarFiltro = this.formBuilder.group({
-      tipo: ['null'],
-      nome: [null]
+      model: ['']
     });
   }
 

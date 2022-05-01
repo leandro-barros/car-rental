@@ -2,18 +2,16 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 @import '~ngx-toastr/toastr';
-/* body{
-  font-family: 'Montserrat', sans-serif;
-} */
 
 * {
   font-family: 'Poppins', sans-serif;
-  /* font-size: 13px; */
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  max-width: 360px;
+  max-height: 360px;
+  margin-top: -79px;
+  margin-bottom: -52px;
   /* height: 100vh; */
 }
 
@@ -24,11 +22,6 @@ mat-form-field {
 *:focus {
   outline: 0 !important
 }
-
-/* body {
-  background-color: #f1f4f9 !important;
-} */
-
 
 /* Botões ------------------------------------------------- */
 .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {

@@ -25,6 +25,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TemplateComponent } from './template/template.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { RentService } from '../rent/rent.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
     ErrorHandlerService,
 
     CarService,
+    RentService,
 
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

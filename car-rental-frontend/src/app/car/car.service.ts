@@ -23,17 +23,7 @@ export class CarService {
   }
 
   pesquisar(filtro: any): Observable<any> {
-    let params = new HttpParams();
-
-    // if (filtro.nome !== null) {
-    //   params = params.append('nome', filtro.nome);
-    // }
-
-    // if (filtro.tipo !== 'null') {
-    //   params = params.append('tipo', filtro.tipo);
-    // }
-
-    return this.http.get<any>(this.carUrl)
+    return this.http.get<any>(`${this.carUrl}?model=${filtro.model}`)
       .pipe(
         catchError(error => {
           throw this.errorHandler.handle(error);
