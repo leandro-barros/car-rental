@@ -1,5 +1,13 @@
 # Aplicação Car Rental
 
+**Negócio**
+
+A aplicação possui uma tela onde o Administrador poderá realizar operações como cadastrar, editar, listar e deletar carros.
+A outra tela é para os clientes visualizarem os carros disponíveis para alugarem.
+Obs: A funcionalidade alugar carro é uma implementação futura, assim como a opção do  administrador inserir foto do carro no momento do cadastro.
+Outra funcionalidade que poderá ser feita é o controle de acesso de usuários.
+
+
 **Ambiente para execução**
 
 Para execução tenha um ambiente com Java 11, nodeJS v12.20.2 + e Angular CLI v7.3.3.
