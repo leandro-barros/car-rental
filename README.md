@@ -1,7 +1,8 @@
 # Aplicação Car Rental
 
 **Ambiente para execução**
-Para execução tenha um ambiente com Java 11, nodeJS v12.20.2 + e Angular ClI v7.3.3.
+
+Para execução tenha um ambiente com Java 11, nodeJS v12.20.2 + e Angular CLI v7.3.3.
 
 Comando para instação versão específica do Angular CLI: **npm install @angular/cli@7.3.3**
 
