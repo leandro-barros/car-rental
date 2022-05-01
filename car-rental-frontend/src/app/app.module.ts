@@ -10,7 +10,6 @@ import { getPortuguesePaginatorIntl } from './core/mat-paginator-translate';
 
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
-import { SegurancaModule } from './seguranca/seguranca.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { SegurancaModule } from './seguranca/seguranca.module';
     BrowserAnimationsModule,
 
     CoreModule,
-    SegurancaModule,
     AppRoutingModule,
     HttpClientModule
   ],

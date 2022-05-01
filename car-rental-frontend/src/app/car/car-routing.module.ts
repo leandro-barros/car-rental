@@ -1,25 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from '../seguranca/auth.guard';
 import { CarRegisterComponent } from './car-register/car-register.component';
 import { CarSearchComponent } from './car-search/car-search.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CarSearchComponent,
-    canActivate: [AuthGuard]
+    component: CarSearchComponent
   },
   {
     path: 'novo',
-    component: CarRegisterComponent,
-    canActivate: [AuthGuard]
+    component: CarRegisterComponent
   },
   {
     path: ':codigo',
-    component: CarRegisterComponent,
-    canActivate: [AuthGuard]
+    component: CarRegisterComponent
   }
 ];
 
