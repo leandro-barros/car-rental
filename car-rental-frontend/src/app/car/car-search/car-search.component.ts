@@ -19,7 +19,7 @@ import { ConfirmacaoExclusaoComponent } from 'src/app/shared/confirmacao-exclusa
 })
 export class CarSearchComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'nome',  'modelo', 'marca', 'cor', 'portas', 'actions'];
+  displayedColumns: string[] = ['id', 'modelo', 'marca', 'cor', 'portas', 'plaque', 'airconditioning', 'actions'];
 
   cars = new MatTableDataSource<Car>();
 
@@ -39,7 +39,7 @@ export class CarSearchComponent implements OnInit {
     this.configurarForm();
     this.cars.paginator = this.paginator;
     this.pesquisar();
-    this.title.setTitle('Pesquisa de carros');
+    this.title.setTitle('Listagem de carros');
   }
 
   configurarForm() {
@@ -58,7 +58,7 @@ export class CarSearchComponent implements OnInit {
 
   confirmarExclusao(car: Car): void {
     const dialogRef = this.dialog.open(ConfirmacaoExclusaoComponent, {
-      data: `Deseja realmente excluir o car ${car.name}`,
+      data: `Deseja realmente excluir o car ${car.model}`,
       width: '350px'
     });
 

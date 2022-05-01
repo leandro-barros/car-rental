@@ -37,11 +37,12 @@ export class CarRegisterComponent implements OnInit {
   configurarForm() {
     this.formGroupCarro = this.formBuilder.group({
       id: [],
-      name: [null, [Validators.required, Validators.minLength(3)]],
       model: [null, [Validators.required]],
       mark: [null, [Validators.required]],
       color: [null, [Validators.required]],
       numberPort: [null, [Validators.required,]],
+      plaque: [null, [Validators.required]],
+      airconditioning: ['true']
     });
   }
 
@@ -50,14 +51,17 @@ export class CarRegisterComponent implements OnInit {
   }
 
   atualizarTituloEdicao() {
-    this.title.setTitle(`Edição do Carro: ${this.formGroupCarro.get('name').value}`);
+    this.title.setTitle(`Edição do Carro: ${this.formGroupCarro.get('model').value}`);
   }
 
   salvar() {
+    
     if (this.formGroupCarro.valid) {
       if (this.editando) {
+        alert('1');
         this.atualizarCarro();
       } else {
+        alert('2');
         this.salvarCarro();
       }
     }
@@ -84,6 +88,8 @@ export class CarRegisterComponent implements OnInit {
     this.carService.buscarCarPorCodigo(codigo)
       .subscribe(car => {
         this.formGroupCarro.patchValue(car);
+        const airconditioning = (car.airconditioning === true ? 'true' : 'false');
+        this.formGroupCarro.controls.airconditioning.setValue(airconditioning);
         this.atualizarTituloEdicao();
       });
   }
