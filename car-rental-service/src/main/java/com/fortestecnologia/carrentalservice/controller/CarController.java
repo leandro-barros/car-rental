@@ -3,6 +3,8 @@ package com.fortestecnologia.carrentalservice.controller;
 import com.fortestecnologia.carrentalservice.dto.CarDto;
 import com.fortestecnologia.carrentalservice.model.Car;
 import com.fortestecnologia.carrentalservice.service.CarService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,13 +20,14 @@ public class CarController {
     }
 
     @GetMapping
-    public List<Car> list() {
+    public List<CarDto> list() {
         return carService.list();
     }
 
     @PostMapping
-    public void save(@RequestBody CarDto carDto) {
+    public ResponseEntity<Car> save(@RequestBody CarDto carDto) {
         carService.save(carDto);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("/{id}")
@@ -37,6 +40,7 @@ public class CarController {
         return carService.findById(id);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         carService.delete(id);

@@ -15,14 +15,22 @@ public class Car {
     private Long id;
 
     @NotNull
-    private String name;
-
     private String model;
 
+    @NotNull
     private String mark;
 
+    @NotNull
     private String color;
 
+    @NotNull
     @Column(name = "number_port")
     private Integer numberPort;
+
+    @NotNull
+    private String plaque;
+
+    @NotNull
+    @Column(name = "air_conditioning")
+    private boolean isAirconditioning;
 }

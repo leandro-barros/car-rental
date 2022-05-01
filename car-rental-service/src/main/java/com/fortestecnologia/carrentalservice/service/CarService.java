@@ -7,6 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CarService {
@@ -17,8 +18,8 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public List<Car> list() {
-        return carRepository.findAll();
+    public List<CarDto> list() {
+        return carRepository.findAll().stream().map(CarDto::new).collect(Collectors.toList());
     }
     public void save(CarDto carDto) {
         var car = new Car();
