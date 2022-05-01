@@ -8,6 +8,4 @@ CREATE TABLE car (
     air_conditioning bool NOT NULL
 );
 
-INSERT INTO car (id, model, mark, color, number_port, plaque, air_conditioning) values (1, 'Palio', 'Fiat', 'Branco', 4, 'HEX4589', true);
-
 create sequence sq_car start 1 increment 1;
