@@ -43,7 +43,7 @@ export class CarService {
       );
   }
 
-  atualizar(car: Car): Observable<Car> {
+  update(car: Car): Observable<Car> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });

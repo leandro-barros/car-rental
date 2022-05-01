@@ -74,7 +74,7 @@
 
         <ng-container matColumnDef="airconditioning">
           <mat-header-cell *matHeaderCellDef> Ar Condicionado </mat-header-cell>
-          <mat-cell *matCellDef="let element" data-label="Ar Condicionado"> {{ element.airconditioning }}
+          <mat-cell *matCellDef="let element" data-label="Ar Condicionado"> {{ element.airconditioning === true ? 'Sim' : 'Não' }}
           </mat-cell>
         </ng-container>
 

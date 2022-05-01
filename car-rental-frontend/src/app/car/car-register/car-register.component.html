@@ -12,7 +12,7 @@
       <mat-card-title>{{ editando ? 'Edição de' : 'Novo' }} Carro</mat-card-title>
       <mat-divider></mat-divider>
 
-      <form (ngSubmit)="salvar()" [formGroup]="formGroupCarro">
+      <form (ngSubmit)="save()" [formGroup]="formGroupCar">
         <div class="row mt-3">
           
           <div class="col-md-6">
@@ -51,7 +51,7 @@
             <mat-form-field appearance="outline" class="mat-form-field-fluid">
               <mat-label>Placa*</mat-label>
               <input matInput formControlName="plaque" placeholder="Digite a placa do carro">
-              <mat-error *ngIf="formGroupCarro.controls.plaque.hasError('required')">Informe a placa</mat-error>
+              <mat-error *ngIf="formGroupCar.controls.plaque.hasError('required')">Informe a placa</mat-error>
             </mat-form-field>
           </div>
 

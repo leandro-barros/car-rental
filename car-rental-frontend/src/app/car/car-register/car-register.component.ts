@@ -12,7 +12,8 @@ import { CarService } from '../car.service';
   styleUrls: ['./car-register.component.css']
 })
 export class CarRegisterComponent implements OnInit {
-  formGroupCarro: FormGroup;
+  
+  formGroupCar: FormGroup;
 
   constructor(
     private title: Title,
@@ -35,7 +36,7 @@ export class CarRegisterComponent implements OnInit {
   }
 
   configurarForm() {
-    this.formGroupCarro = this.formBuilder.group({
+    this.formGroupCar = this.formBuilder.group({
       id: [],
       model: [null, [Validators.required]],
       mark: [null, [Validators.required]],
@@ -47,34 +48,33 @@ export class CarRegisterComponent implements OnInit {
   }
 
   get editando() {
-    return Boolean(this.formGroupCarro.get('id').value);
+    return Boolean(this.formGroupCar.get('id').value);
   }
 
   atualizarTituloEdicao() {
-    this.title.setTitle(`Edição do Carro: ${this.formGroupCarro.get('model').value}`);
+    this.title.setTitle(`Edição do Carro: ${this.formGroupCar.get('model').value}`);
   }
 
-  salvar() {
-    
-    if (this.formGroupCarro.valid) {
+  save() {
+    if (this.formGroupCar.valid) {
       if (this.editando) {
-        this.atualizarCarro();
+        this.updateCar();
       } else {
-        this.salvarCarro();
+        this.saveCar();
       }
     }
   }
 
-  salvarCarro() {
-    return this.carService.salvar(this.formGroupCarro.value)
+  saveCar() {
+    return this.carService.salvar(this.formGroupCar.value)
       .subscribe(carro => {
         this.toastr.success('Carro adicionado com sucesso!');
         this.router.navigate(['/carros']);
       });
   }
 
-  atualizarCarro() {
-    this.carService.atualizar(this.formGroupCarro.value)
+  updateCar() {
+    this.carService.update(this.formGroupCar.value)
       .subscribe(carro => {
         this.router.navigate(['/carros']);
         this.toastr.success('Carro alterado com sucesso !');
@@ -85,15 +85,15 @@ export class CarRegisterComponent implements OnInit {
   buscarCarPorCodigo(codigo: number) {
     this.carService.buscarCarPorCodigo(codigo)
       .subscribe(car => {
-        this.formGroupCarro.patchValue(car);
+        this.formGroupCar.patchValue(car);
         const airconditioning = (car.airconditioning === true ? 'true' : 'false');
-        this.formGroupCarro.controls.airconditioning.setValue(airconditioning);
+        this.formGroupCar.controls.airconditioning.setValue(airconditioning);
         this.atualizarTituloEdicao();
       });
   }
 
   novo() {
-    this.formGroupCarro.reset();
+    this.formGroupCar.reset();
     this.router.navigate(['/carros/novo']);
   }
 

@@ -44,13 +44,11 @@ import { ConfirmacaoExclusaoComponent } from '../shared/confirmacao-exclusao/con
     MatRadioModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule,
     MatDialogModule,
     MatDividerModule,
     MatTooltipModule,
     MatPaginatorModule,
-    MatFormFieldModule,
-
+    MatFormFieldModule
   ],
   entryComponents: [
     ConfirmacaoExclusaoComponent
