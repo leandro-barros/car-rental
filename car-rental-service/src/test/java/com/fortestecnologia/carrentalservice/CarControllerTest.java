@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,9 +34,9 @@ public class CarControllerTest {
 
         List<CarDto> carDtos = Arrays.asList(createCar());
 
-        Mockito.when(carService.list()).thenReturn(carDtos);
+        Mockito.when(carService.list(Mockito.any())).thenReturn(carDtos);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/cars"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/cars").param("model", ""))
                 .andExpect(jsonPath("$.*", Matchers.hasSize(1)))
                 .andExpect(jsonPath("$.[0].mark").value("Fiat"))
                 .andExpect(jsonPath("$.*.model", Matchers.hasItems("Palio")))
@@ -46,7 +47,6 @@ public class CarControllerTest {
 
     private CarDto createCar() {
         CarDto carDto = CarDto.builder()
-                            .id(1L)
                             .color("Preta")
                             .mark("Fiat")
                             .model("Palio")

@@ -13,15 +13,15 @@ import java.util.List;
 @RestController
 public class CarController {
 
-    private CarService carService;
+    private final CarService carService;
 
     public CarController(CarService carService) {
         this.carService = carService;
     }
 
     @GetMapping
-    public List<CarDto> list() {
-        return carService.list();
+    public List<CarDto> list(@RequestParam String model) {
+        return carService.list(model);
     }
 
     @PostMapping

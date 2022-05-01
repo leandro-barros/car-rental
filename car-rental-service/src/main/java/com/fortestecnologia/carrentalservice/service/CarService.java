@@ -18,8 +18,11 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public List<CarDto> list() {
-        return carRepository.findAll().stream().map(CarDto::new).collect(Collectors.toList());
+    public List<CarDto> list(String model) {
+        if (model.isEmpty()) {
+            model = null;
+        }
+        return carRepository.findByModel(model).stream().map(CarDto::new).collect(Collectors.toList());
     }
     public void save(CarDto carDto) {
         var car = new Car();
